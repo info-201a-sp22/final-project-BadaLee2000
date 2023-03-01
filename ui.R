@@ -7,10 +7,16 @@ library(shiny)
 depression_df <- read.csv("depression_anxiety_data.csv", stringsAsFactors = FALSE)
 
 intro_tab <- tabPanel(
+  titlePanel("My Shiny App"),
+  mainPanel(
+    h1("P03: Final Deliverable"),
+    h2("Depression and Anxiety Data"),
+    h3("Authors"),
+    p(""),
+    h3("Date"),
+    h3("The purpose/importance of the project")
   
-  h1("Introduction"),
-  p("blahblah")
-  
+  )
 )
 
 interactive_tab <- tabPanel(
@@ -18,3 +24,5 @@ interactive_tab <- tabPanel(
   h1("Interactive Visualization")
   
 )
+
+# conclusion_tab 
