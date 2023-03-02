@@ -4,10 +4,10 @@ library(dplyr)
 library(rsconnect)
 library(shiny)
 
-depression_df <- read.csv("depression_anxiety_data.csv", stringsAsFactors = FALSE)
+mentalhealth_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-BadaLee2000/main/depression_anxiety_data.csv")
 
-intro_tab <- tabPanel(
-  titlePanel("My Shiny App"),
+intro <- tabPanel(
+  titlePanel("Main Page"),
   mainPanel(
     h1("P03: Final Deliverable"),
     h2("Depression and Anxiety Data"),
@@ -60,11 +60,48 @@ intro_tab <- tabPanel(
     
   )
 )
+#interactive tab 1
+interactive_tab1 <- tabPanel(
+"Interactive Visualization",
+  plotlyOutput("chart1")
+)
+#interactive tab 2
+interactive_tab2 <- tabPanel(
+  "Interactive Visualization 2",
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput(
+        inputId = "slider",
+        label = "Year range:",
+        min = 17, 
+        max = 31,
+        value = c(17,31))
+    ),
+    
+    # Display the map and table in the main panel
+  mainPanel(
+  plotlyOutput("chart2")
+)
+)
+)
+#interactive tab 3
+interactive_tab3 <- tabPanel(
+  "Interactive Visualization 3"
 
-interactive_tab <- tabPanel(
-  
-  h1("Interactive Visualization")
-  
 )
 
-# conclusion_tab 
+#conclusion tab
+conclusion_tab <- tabPanel(
+  "Conclusion"
+)
+intro_tab <- navbarPage(
+  "Our Shiny App",
+  intro,
+  interactive_tab1,
+  interactive_tab2,
+  interactive_tab3,
+  conclusion_tab
+)
+
+
+
