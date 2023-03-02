@@ -7,7 +7,7 @@ library(shiny)
 mentalhealth_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-BadaLee2000/main/depression_anxiety_data.csv")
 
 intro <- tabPanel(
-  titlePanel("Main Page"),
+  titlePanel("Introduction"),
   mainPanel(
     h1("P03: Final Deliverable"),
     h2("Depression and Anxiety Data"),
@@ -63,7 +63,20 @@ intro <- tabPanel(
 #interactive tab 1
 interactive_tab1 <- tabPanel(
 "Interactive Visualization",
-  plotlyOutput("chart1")
+sidebarLayout(
+  sidebarPanel(
+    selectInput(
+      inputId = "analysis_var",
+      label = "Choose a Gender",
+      choices = c("female", "male"),
+      selected = "female"),
+  ),
+  mainPanel(
+  plotlyOutput("chart1"),
+  h2("What the Chart Represents and Concludes", align = "center"),
+  textOutput("chart1_analysis")
+)
+)
 )
 #interactive tab 2
 interactive_tab2 <- tabPanel(
@@ -80,7 +93,9 @@ interactive_tab2 <- tabPanel(
     
     # Display the map and table in the main panel
   mainPanel(
-  plotlyOutput("chart2")
+  plotlyOutput("chart2"),
+  h2("What the Chart Represents and Concludes", align = "center"),
+  textOutput("chart2_analysis")
 )
 )
 )
