@@ -121,6 +121,7 @@ interactive_tab3 <- tabPanel(
   sidebarPanel(year_select),
   mainPanel(plotlyOutput("chart3"),
             br(),
+            h2("What the Chart Represents and Concludes", align = "center"),
             textOutput("chart3_analysis")
             )
   )
