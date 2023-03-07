@@ -119,7 +119,9 @@ year_select <- selectInput(
 interactive_tab3 <- tabPanel(
   "Interactive Visualization 3",
   sidebarPanel(year_select),
-  mainPanel(plotlyOutput("chart3")
+  mainPanel(plotlyOutput("chart3"),
+            br(),
+            textOutput("chart3_analysis")
             )
   )
 

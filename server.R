@@ -101,7 +101,7 @@ my_server <- function(input,output){
   })
   
   # Chart 3 analysis
-    output$chart1_analysis <- renderText({
+    output$chart3_analysis <- renderText({
     "This chart is a data visualization that shows the correlation between class standing and depression severity in college students. We wanted to see if certain college years made a students depression more severe. Since coursework tends to get harder the further you are into college, we wanted to determine if the severity of depression gets worse too? From the graph, it shows that the higher year of college doesn't increase a students depression severity. There are actually more first year college students with severe depression than fourth year college students with severe depression. With the selection choices on the left-hand side, users are able to choose which years they want to compare."
     })
       
