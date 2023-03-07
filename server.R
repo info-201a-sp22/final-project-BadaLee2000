@@ -4,6 +4,7 @@ library(dplyr)
 library(rsconnect)
 library(shiny)
 library(plotly)
+library("scales")
 
 mentalhealth_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-BadaLee2000/main/depression_anxiety_data.csv")
 mentalhealth_df2 <- mentalhealth_df %>% group_by(gender, depression_severity) %>% summarize(count = length(depression_severity))
@@ -62,4 +63,46 @@ my_server <- function(input,output){
     The fact there are significantly less students with depression after age 24, can also be explained by the fact
     there aren't many students over the age of 24 in the data set."
   })
+  
+  
+  # Chart 3
+  
+    
+    new_mh_df <- mentalhealth_df %>% select(school_year, depression_severity)
+    
+    na_mh_df <- na.omit(new_mh_df)
+    
+    levels(as.factor(na_mh_df$depression_severity))
+    
+    
+    
+    output$chart3 <- renderPlotly({
+      
+      selected_year <- na_mh_df %>% 
+        filter(school_year %in% input$user_year_selection)
+    
+      chartplot3 <- ggplot(selected_year, aes(y = school_year,
+                                         fill = factor(depression_severity, 
+                                                       levels = c("none", "None-minimal", "Mild", "Moderate", 
+                                                                  "Moderately severe", "Severe")),
+                                         text = paste("Depression Severity:", depression_severity, "<br>",
+                                                      "Percent of Students:"))) +
+        geom_bar(stat = "count",
+                 position = "fill") +
+        scale_fill_brewer(palette = "Oranges") +
+        labs(title = "Severity of Depression in College Students",
+             x = "Percent of College Students",
+             y = "Year of College",
+             fill = "Depression Severity") +
+        scale_y_continuous(breaks = c(1, 2, 3, 4))
+      
+      
+      ggplotly(chartplot3, tooltip = "text")
+  })
+  
+  # Chart 3 analysis
+    output$chart1_analysis <- renderText({
+    "This chart is a data visualization that shows the correlation between class standing and depression severity in college students. We wanted to see if certain college years made a students depression more severe. Since coursework tends to get harder the further you are into college, we wanted to determine if the severity of depression gets worse too? From the graph, it shows that the higher year of college doesn't increase a students depression severity. There are actually more first year college students with severe depression than fourth year college students with severe depression. With the selection choices on the left-hand side, users are able to choose which years they want to compare."
+    })
+      
 }

@@ -99,11 +99,29 @@ interactive_tab2 <- tabPanel(
 )
 )
 )
-#interactive tab 3
-interactive_tab3 <- tabPanel(
-  "Interactive Visualization 3"
 
+# Variables for interactive tab 3
+new_mh_df <- mentalhealth_df %>% select(school_year, depression_severity)
+
+na_mh_df <- na.omit(new_mh_df)
+
+levels(as.factor(na_mh_df$depression_severity))
+
+# Interactive tab 3
+year_select <- selectInput(
+  inputId = "user_year_selection", 
+  label = "Select a college year",
+  choices = unique(na_mh_df$school_year),
+  selected = "1",
+  multiple = TRUE
 )
+
+interactive_tab3 <- tabPanel(
+  "Interactive Visualization 3",
+  sidebarPanel(year_select),
+  mainPanel(plotlyOutput("chart3")
+            )
+  )
 
 #conclusion tab
 conclusion_tab <- tabPanel(
