@@ -31,3 +31,4 @@ line_plot <- ggplot(data = mentalhealth_df2) +
        y = "Count",
        color = "Gender")
 ggplotly(line_plot)
+

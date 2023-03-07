@@ -11,6 +11,8 @@ intro <- tabPanel(
   mainPanel(
     h1("P03: Final Deliverable"),
     h2("Depression and Anxiety Data"),
+    img("", src = "https://www.apa.org/images/2022-10-feature-campus-crisis-tile_tcm7-309786.jpg",
+        width = "600", height = "300", align = "center"),
     h3("Authors"),
     p("Jason Cabusao, Jamie Kim, Bada Lee, and Tamia Ouch"),
     
@@ -57,6 +59,7 @@ intro <- tabPanel(
     p("Another important challenge is the classifications of sex and its intricacies. The data set only looks at males and females, and disregards college students who are intersex. It forces those that are unsure into a gender binary."),
     p("An additional challenge we need to look at is deciphering whether a college student's actual sex influenced their mental health, or if their environment and attitudes towards their sex is to blame. Because of societies’ views and the environment it fosters when discussing a person's sex, it can be damaging to those who fit, or fail to fit, in those gender binary ideologies. 
     Folks who identify as a man may face conflict with other men in their environment when they don’t partake in traditional masculine activities. This goes the same for folks who do identify as a woman. If they fail to conform to what society deems as feminine, they may be outcasted or viewed differently. These gender stereotypes are only damaging the mental health of students who are struggling to fit into these boxes.")
+    
     
   )
 )
@@ -128,8 +131,8 @@ interactive_tab3 <- tabPanel(
 
 #conclusion tab
 conclusion_tab <- tabPanel(
-  "Conclusion"
-)
+  "Conclusion",
+  )
 intro_tab <- navbarPage(
   "Our Shiny App",
   intro,
