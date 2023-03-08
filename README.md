@@ -3,7 +3,7 @@
 
 Authors: Jason Cabusao, Jamie Kim, Bada Lee, and Tamia Ouch
 
-Link: Link to your Shiny App here
+Link: https://badalee.shinyapps.io/final-project-BadaLee2000/
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
