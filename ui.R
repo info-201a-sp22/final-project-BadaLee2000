@@ -166,7 +166,7 @@ conclusion_tab <- tabPanel(
   )
 )
 intro_tab <- navbarPage(
-  "Our Shiny App",
+  "INFO201",
   intro,
   interactive_tab1,
   interactive_tab2,
