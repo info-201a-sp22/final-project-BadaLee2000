@@ -65,14 +65,14 @@ intro <- tabPanel(
 )
 #interactive tab 1
 interactive_tab1 <- tabPanel(
-"Interactive Visualization",
-sidebarLayout(
-  sidebarPanel(
-    selectInput(
-      inputId = "analysis_var",
-      label = "Choose a Gender",
-      choices = c("female", "male"),
-      selected = "female"),
+  titlePanel("Visualization 1"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(
+        inputId = "analysis_var",
+        label = "Choose a Gender",
+        choices = c("female", "male"),
+        selected = "female"),
   ),
   mainPanel(
   plotlyOutput("chart1"),
@@ -83,7 +83,7 @@ sidebarLayout(
 )
 #interactive tab 2
 interactive_tab2 <- tabPanel(
-  "Interactive Visualization 2",
+  titlePanel("Visualization 2"),
   sidebarLayout(
     sidebarPanel(
       sliderInput(
@@ -120,7 +120,7 @@ year_select <- selectInput(
 )
 
 interactive_tab3 <- tabPanel(
-  "Interactive Visualization 3",
+  titlePanel("Visualization 3"),
   sidebarPanel(year_select),
   mainPanel(plotlyOutput("chart3"),
             br(),
