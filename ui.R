@@ -131,8 +131,40 @@ interactive_tab3 <- tabPanel(
 
 #conclusion tab
 conclusion_tab <- tabPanel(
-  "Conclusion",
+  titlePanel("Conclusion"),
+  mainPanel(
+    h3("Takeaways"),
+    p("We aimed to investigate the relationship between depression severity and various variables including age, gender, and class standing."),
+    p("According to our first graph, while men have higher number of 'none' to 'none-minimal depression', women have higher number of 'mild' to 'severe depression'. 
+      This visualization is significant because it highlights the gender differences in depression prevalence among college students.
+      Although both male and female students may experience depression, the data suggests that female students are more likely to report moderate to severe symptoms.
+      Overall, the chart shows the difference in trends between male and female students."),
+    p("According to our second graph, it is important to notice that depression often peaks between ages of 19-22. 
+      This is important because it can help destigmatize that individuals with depression in their early twenties are alone. 
+      This data visualization helps combat the notion that young individuals should be embarrassed to face depression."),
+    p("According to our last graph, it shows that the higher year of college doesn't increase a students depression severity. 
+      There are actually more first year college students with severe depression than fourth year college students with severe depression."), 
+    h3("Insights"),
+    p("Through the analysis, we were able to learn the levels of students' depression severity based on their gender (female or male), 
+    ages (between 17 years old to 31 years old), and the college years (freshman to senior years). The most important insight
+      includes estimating the prevalence of depression of students, the factors that cause depression, and the impact of depression on academic performances as well as students' well-being."), 
+    p("In more details, the first graph provides insights into the gender based trends in depression among college students. 
+    The second graph provides insights into the age related trends in depression among college students and can help to promote greater awareness of mental health issues among young adults.
+    The third graph provides insights into the relationship between college year and depression severity among college students."),
+    p("The trends and patterns of the charts can be useful to find out the type of therapy that students need or which specfic age group needs more care than the other.
+    The insights gained from analyzing data on students' depression can provide valuable information for creating interventions and support services 
+      for the students who are struggling with depression. This not only can help improve their mental health and well-being but also help students improve their academic performance and success."),
+    h3("Implications"),
+    p("The insights from the data on depression of students can have broad implications for addressing mental health concerns. 
+      With the number of students who experience depression, the factors that contribute to depression, and the impacts on academic performance, 
+      those who are in charge of taking care of students including parents, teachers, schools, and other organizations can provide better supports for students with depression. 
+      The insights can also influence the policies aimed at promoting students' healthy mental health and well-being. For example, the program to reduce students' stress or depression can be created for schools."),
+    p("Additionally, understanding of the impact of depression on students, schools and other organizations can work to reduce the negative attitudes and stereotypes on mental illness. 
+    This can promote a more supportive environment where students can think that mental illness is not something that they need to hide. 
+    This can allow students feel more comfortable seeking help and support, which will eventually improve students' mental health and well-being, not only among students but also in society."),
+  
   )
+)
 intro_tab <- navbarPage(
   "Our Shiny App",
   intro,
