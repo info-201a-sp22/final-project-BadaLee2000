@@ -3,6 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(rsconnect)
 library(shiny)
+library(bslib)
 
 mentalhealth_df <- read.csv("https://raw.githubusercontent.com/info-201a-wi23/exploratory-analysis-BadaLee2000/main/depression_anxiety_data.csv")
 
@@ -63,6 +64,13 @@ intro <- tabPanel(
     
   )
 )
+
+my_theme <- bs_theme(bg = "#d17756", #background color
+                     fg = "white", #foreground color
+                     primary = "#f7b69e", # primary color
+) 
+
+
 #interactive tab 1
 interactive_tab1 <- tabPanel(
   titlePanel("Visualization 1"),
@@ -166,6 +174,7 @@ conclusion_tab <- tabPanel(
   )
 )
 intro_tab <- navbarPage(
+  theme = my_theme,
   "INFO201",
   intro,
   interactive_tab1,
