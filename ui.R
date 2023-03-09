@@ -115,7 +115,7 @@ year_select <- selectInput(
   inputId = "user_year_selection", 
   label = "Select a college year",
   choices = unique(na_mh_df$school_year),
-  selected = "1",
+  selected = c("1", "2", "3", "4"),
   multiple = TRUE
 )
 
