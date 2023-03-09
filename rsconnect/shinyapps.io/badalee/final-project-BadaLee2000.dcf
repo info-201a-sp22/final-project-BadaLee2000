@@ -5,9 +5,9 @@ account: badalee
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8442221
-bundleId: 6929855
+bundleId: 6934124
 url: https://badalee.shinyapps.io/final-project-BadaLee2000/
-when: 1678262819.7019
-lastSyncTime: 1678262819.70192
+when: 1678330034.40601
+lastSyncTime: 1678330034.40602
 asMultiple: FALSE
 asStatic: FALSE
